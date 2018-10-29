@@ -1,0 +1,43 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: dnszones.cloudkit.openshift.io
+spec:
+  group: cloudkit.openshift.io
+  names:
+    kind: DNSZone
+    plural: dnszones
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          type: string
+        kind:
+          type: string
+        metadata:
+          type: object
+        spec:
+          properties:
+            providerSpec:
+              type: object
+            zoneName:
+              type: string
+          required:
+          - zoneName
+          type: object
+        status:
+          properties:
+            providerStatus:
+              type: object
+          type: object
+  version: v1alpha1
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

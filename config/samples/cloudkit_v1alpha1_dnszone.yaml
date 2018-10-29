@@ -1,0 +1,8 @@
+apiVersion: cloudkit.openshift.io/v1alpha1
+kind: DNSZone
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: dnszone-sample
+spec:
+  zoneName: example.com

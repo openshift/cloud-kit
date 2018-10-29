@@ -1,0 +1,11 @@
+apiVersion: cloudkit.openshift.io/v1alpha1
+kind: DNSRecord
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: dnsrecord-sample
+spec:
+  zoneName: example.com
+  recordName: server1.example.com
+  recordType: A
+  value: 127.0.0.1
